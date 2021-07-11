@@ -1,0 +1,977 @@
+@import url(./reset.css);
+
+/* ================ PRESET ============= */
+
+:root {
+  --header-height: 50px;
+  --notibox-height: 50px;
+  --util-height: 45px;
+
+  /* color */
+  --main-color: #b7cd3d;
+  --main-color-alt: #98aa33;
+
+  --point-color: #621e3f;
+  --point-color-alt: #49162f;
+
+  --point-blue: #22a5dd;
+  --dark-gray: #4d4d4a;
+  --light-gray: #909091;
+  --bg-gray-dark: #d5d8d8;
+  --bg-gray-light: #eff0ef;
+  --chatbot-color: #7e7f79;
+
+  /* font size */
+  --small-font: 0.5rem;
+  --text-font: 0.8rem;
+  --normal-font: 1rem;
+  --big-font: 1.25rem;
+  --bigger-font: 1.5rem;
+
+  /* mg */
+  --mb1: 0.5rem;
+  --mb2: 1rem;
+  --mb3: 1.5rem;
+  --mb4: 2rem;
+  --mb5: 2.5rem;
+  --mb6: 3rem;
+  --mb7: 3.5rem;
+  --mb8: 4rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 65px;
+
+    /* font size */
+    --small-font: 0.8rem;
+    --text-font: 1rem;
+    --normal-font: 1.25rem;
+    --big-font: 1.5rem;
+    --bigger-font: 1.875rem;
+  }
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "나눔고딕";
+  color: var(--dark-gray);
+  margin: calc(
+      var(--notibox-height) + var(--util-height) + var(--header-height)
+    )
+    0 0 0;
+  /* 헤더 띄우기 위해 */
+}
+
+/* =============== LAYOUT ===================== */
+
+.bd_container {
+  max-width: 1200px;
+  margin: 0 var(--mb2);
+}
+
+.bd_grid {
+  display: grid;
+  grid-gap: var(--mb4);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+/* ========== global CSS =============== */
+
+.section_title {
+  font-size: var(--big-font);
+  font-weight: bold;
+}
+
+.title_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb8);
+}
+
+.more_i {
+  font-size: 2rem;
+}
+.more_i:hover {
+  color: var(--point-color);
+}
+
+.dn {
+  display: none;
+}
+
+.button {
+  display: inline-flex;
+  width: 300px;
+  height: 50px;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: 90px;
+  }
+}
+.button i {
+  font-size: var(--big-font);
+}
+
+.btn_green {
+  background: var(--main-color);
+  color: var(--point-color);
+}
+
+.btn_green:hover {
+  background: var(--main-color-alt);
+  color: var(--point-color-alt);
+}
+
+.btn_pur {
+  background: var(--point-color);
+  color: #fff;
+}
+
+.btn_pur:hover {
+  background: var(--point-color-alt);
+}
+
+.btn_gray {
+  background: var(--chatbot-color);
+  color: #fff;
+}
+
+.close_btn {
+  font-size: var(--big-font);
+  color: #fff;
+  cursor: pointer;
+}
+
+.bar {
+  position: relative;
+
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 1px;
+  height: 1rem;
+  background: var(--dark-gray);
+}
+
+/* ========================= global chatbot ============ */
+.chatbot_container {
+  position: relative;
+  min-width: 1200px;
+  z-index: 10000;
+}
+
+.chatbot_box {
+  position: fixed;
+  bottom: 85px;
+  right: 1%;
+}
+
+/* [질문!!!!!!!!!!!!]챗봇 고정시키기 그리드 라인1200px 바깥에 고정하는법
+ */
+
+.chatbot_img {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 5px 50px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =========== SWIPER SLIDER BASE CSS =========== */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: inherit;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================== HEADER =============================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* =============== NOTIBOX =====================*/
+.notibox {
+  background: var(--bg-gray-dark);
+}
+
+.notibox_inner {
+  height: var(--notibox-height);
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 10px;
+  font-size: var(--text-font);
+  overflow: hidden;
+}
+
+.noti_title,
+.noti_contents {
+  color: var(--point-color);
+}
+
+.noti_contents {
+  font-weight: bold;
+}
+
+.noti_txt {
+  margin: 1.5rem 0;
+  cursor: pointer;
+}
+
+.noti_check {
+  /* width: 10px; */
+
+  /* 체크박스 만들어보기*/
+}
+.noti_close {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+  font-size: var(--small-font);
+}
+
+/* ========= util ========= */
+.header_util {
+  background: #fff;
+}
+
+.util_inner {
+  height: var(--util-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--small-font);
+}
+
+.util_inner ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.util_inner a {
+  cursor: pointer;
+  padding: 0 0.5rem;
+  transition: all .3s ease;
+
+}
+
+.util_inner a:hover {
+  font-weight: bold;
+}
+
+.ut_lang,
+.ut_land {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ut_land_i {
+  font-size: var(--normal-font);
+}
+
+/* ========= JS UTIL 언어선택 =============*/
+.fw_bold {
+  font-weight: bold;
+}
+
+/*========== HEADER NAV ========= */
+
+.header_nav {
+  background: var(--main-color);
+}
+.header_inner {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_list a {
+  position: relative;
+  margin: 0 1rem;
+  font-size: var(--normal-font);
+  transition: all .3s ease;
+
+}
+.nav_list a:hover {
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav_right {
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--bigger-font);
+  display: none;
+  cursor: pointer;
+}
+
+.nav_user {
+  color: var(--point-color);
+  margin-right: var(--mb2);
+}
+.nav_user,
+.nav_search{
+  transition: all .3s ease;
+}
+
+.nav_user:hover,
+.nav_search:hover {
+  color: #fff;
+}
+
+/* ========= HEADER BTN ========= */
+
+.menu_btn {
+  font-size: 2rem;
+  padding: var(--mb2);
+  cursor: pointer;
+}
+
+.menu_closebtn {
+  position: absolute;
+  display: block;
+  font-size: 3rem;
+  top: var(--mb1);
+  right: var(--mb1);
+}
+
+/* ========= HEADER MENU 반응형 max-width: 768PX =========*/
+@media (max-width: 768px) {
+  .nav_menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: var(--mb4);
+    background: rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.5 ease-in-out;
+    z-index: 10;
+  }
+  .nav_list {
+    margin-right: 3rem;
+    padding: 3rem;
+  }
+
+  .nav_list a {
+    font-size: var(--bigger-font);
+  }
+
+  .nav_list a:hover {
+    color: var(--point-color);
+  }
+}
+
+/* ==========JS MENU ACTIVE ========== */
+
+.show_menu {
+  right: 0;
+}
+
+/* ========================================== MAIN - BANNER ============================ */
+
+.main_banner {
+  background: var(--bg-gray-light);
+}
+
+.banner_inner {
+  margin: 0;
+}
+
+/* ====== 배너 슬라이드 불렛 위치 ============*/
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 15%;
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--main-color);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  display: none;
+}
+
+/* ======================= MAIN - MAIN FUNCTION ==============================*/
+
+.main_fn {
+ 
+  background: var(--main-color);
+}
+
+.re_fn_container {
+  position: relative;
+  height: 500px;
+}
+
+.reserve_box {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: 95%;
+  background: #fff;
+  z-index: 1;
+  padding: var(--mb4) var(--mb2);
+  grid-template-rows: 1fr auto;
+}
+
+
+/* ================= MAIN -MAIN FN  re_box_top =====================*/
+.re_box_top {
+  position: relative;
+  margin-bottom: var(--mb6);
+}
+
+.re_box_top ul {
+  display: flex;
+}
+
+.reserve_way {
+  position: relative;
+  margin: 0 var(--mb2);
+  font-size: var(--normal-font);
+  cursor: pointer;
+}
+
+.reserve_active::after {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 50px;
+  height: 5px;
+  background: var(--main-color);
+}
+
+.bonus_ticket {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  margin-right: var(--mb2);
+}
+
+.bonus_i {
+  width: 25px;
+  margin-right: var(--mb1);
+}
+
+/* ================= MAIN -MAIN FN  reserve _ bottom ==================== */
+
+.re_box_bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.re_input_field {
+  border-bottom: 3px solid var(--main-color);
+  margin: var(--mb2) var(--mb1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--normal-font);
+  padding: 0.5rem;
+}
+
+.reserve_input {
+  all: unset;
+  width: 280px;
+}
+
+.re_input_field i {
+  font-size: var(--normal-font);
+  cursor: pointer;
+}
+
+.bxs-plane {
+  transform: rotate(90deg);
+}
+
+/* =========================== MAIN -MAIN FN - Quick fn Menu ============*/
+
+.q_fn_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--mb6) 0;
+}
+.q_fn_li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--big-font);
+}
+
+.q_fn_li img {
+  width: 40px;
+  padding-right: var(--mb2);
+}
+.q_fn_li a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ======================= MAIN - LOWPRICE ==============================*/
+
+.low_price_container {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: var(--mb8);
+  place-items: center;
+}
+
+.lp_cont {
+  width: 230px;
+  border: 1px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  padding: var(--mb2);
+}
+
+.lp_label {
+  color: var(--point-color);
+  font-weight: bold;
+  margin-bottom: var(--mb2);
+  font-size: var(--text-font);
+}
+
+.lp_place,
+.lp_price {
+  line-height: 1.2;
+  font-weight: bold;
+  font-size: var(--normal-font);
+  margin-bottom: var(--mb1);
+}
+
+.lp_price span,
+.lp_date {
+  font-size: var(--small-font);
+}
+
+.lp_price strong {
+  color: var(--point-blue);
+}
+
+/* ============== best price ticket======== */
+
+.best_price_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--mb4);
+}
+.best_price_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: var(--mb3) var(--mb6);
+  background: var(--main-color);
+}
+
+.bp_info {
+  padding-right: var(--mb6);
+}
+
+.bp_title {
+  color: var(--point-color);
+  font-weight: bold;
+  margin-bottom: var(--mb3);
+  font-size: var(--nomal-font);
+}
+
+.bp_txt {
+  font-size: var(--text-font);
+  font-weight: bold;
+}
+/* ======================= MAIN - EVENT ==============================*/
+
+.main_event {
+  background: var(--bg-gray-light);
+}
+
+.event_box {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  place-items: center;
+  margin-bottom: var(--mb8);
+}
+
+.event_card {
+  position: relative;
+  width: 360px;
+  /* ![질문!!!]너비를 임의로 잡아줘야 하는건지 --> 배경을 줬을때 블록요소이기 때문에 100%를 차지함*/
+  cursor: pointer;
+  transition: all .5 ease-in-out;
+}
+
+.ev_bg_blue1 {
+  background: #2c3cad;
+}
+
+.ev_bg_blue2 {
+  background: #0283e8;
+}
+
+.ev_bg_blue3 {
+  background: #0676c1;
+}
+
+.event_card:hover.event_card::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* [질문!!!!!!!]이미지 딱 붙게 하기.. --> 원래는 img_desc에 배경으로 색을 넣었는데 이미지와 텍스트 사이에 틈이생김*/
+/* --> 아예 카드자체에 배경을 넣는 것으로 해결함  ... 하지만 다른 방법이 있는지.. */
+.event_card img {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.img_info_title {
+  font-weight: bold;
+  color: #fff;
+  padding: var(--mb2);
+  text-align: center;
+}
+
+.img_info_title span {
+  display: block;
+  font-size: var(--small-font);
+  margin-top: var(--mb1);
+  font-weight: normal;
+}
+
+.yell {
+  color: yellow;
+}
+
+/* ======================= MAIN - SERVICE ==============================*/
+
+.main_service {
+  background: #fff;
+}
+
+.service_box {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: end;
+  margin: 3rem 0;
+}
+
+.service_box li {
+  width: 100%;
+  background: #fff;
+  border-radius: 50%;
+  
+}
+
+.service_box li:hover {
+  box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.1);
+  
+}
+.service_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all .5 ease-in-out;
+  z-index: 1;
+  padding: var(--mb3);
+}
+
+
+
+.service_name {
+  font-weight: bold;
+  margin-top: var(--mb2);
+}
+/* ================================ FOOTER ============================ */
+.footer_inner {
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 5rem;
+}
+
+/* ======================== FOOTER TOP ======= */
+.footer_top {
+  background: var(--bg-gray-dark);
+}
+
+
+.footer_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ft_menu_title {
+  font-size: var(--normal-font);
+  
+}
+
+.ft_sub {
+  margin-top: var(--mb4);
+}
+
+.ft_sub li {
+ margin: var(--mb1) 0;
+}
+
+.ft_sub li:hover {
+  color: #fff;
+}
+
+.footer_social,
+.footer_reward {
+  justify-self: end;
+}
+
+.ft_social_i_box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: var(--mb3);
+}
+
+.ft_social_i_box li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: var(--mb2);
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: var(--bigger-font);
+  transition: all .3s ease;
+}
+.ft_social_i_box li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ft_social_i_box li:hover {
+  background: var(--main-color);
+}
+
+
+/* ======================== FOOTER BOTTOM ======= */
+
+.footer_bottom {
+  background: var(--main-color);
+}
+
+.fb_info_ltop {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb3);
+}
+.fb_info_ltop p {
+  position: relative;
+  margin-right: var(--mb3);
+}
+
+.fb_info_ltop span {
+  color: var(--point-color);
+}
+.fb_info_ltop .bar::after {
+  width: 3px;
+  left: -10px;
+}
+
+.fb_com_info_box {
+  display: flex;
+}
+.footer_logo {
+  font-weight: bold;
+  color: var(--point-color);
+  margin-right: var(--mb2);
+  white-space: nowrap;
+}
+
+.fb_com_info {
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  font-size: var(--small-font);
+}
+
+.fb_com_info p,
+.fb_com_info address {
+  margin-right: var(--mb2);
+  margin-bottom: 3px;
+}
+
+.fb_com_info .bar::after {
+  top: 2px;
+  left: -8px;
+  height: 10px;
+}
+
+.copyright {
+  font-size: var(--small-font);
+  margin-top: var(--mb2);
+}
+
+
+@media (min-width: 768px) {
+  .logo {
+    width: 160px;
+    margin: 0;
+  }
+  .nav_right {
+    display: flex;
+  }
+  .menu_btn {
+    display: none;
+  }
+  .menu_closebtn {
+    display: none;
+  }
+
+  .more_i {
+    font-size: 3rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex;
+  }
+
+  .reserve_box {
+    transform: translate(-50%, -20%);
+  }
+  
+  .re_fn_container {
+    height: 200px;
+  }
+  
+  .reserve_box {
+    top: 0%;
+  }
+
+  .re_box_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .re_input_field {
+    margin: 0 var(--mb1);
+  }
+
+  .reserve_input {
+    width: 140px;
+
+  }
+
+
+
+}
+
+
+
+@media (min-width: 1024px) {
+  .bd_container {
+    margin: 0 auto;
+  }
+}

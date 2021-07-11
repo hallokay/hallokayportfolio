@@ -1,1 +1,719 @@
-<h1>123456798</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JINAIR</title>
+
+    
+    <!-- boxicon -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+ 
+    <!-- css -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- CHATBOT -->
+    <div class="chatbot_container">
+        <div href="#" class="chatbot_box">
+            <svg class="chatbot_img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="">
+                <image id="chatbot" data-name="chatbot" alignment-baseline="middle" transform="translate(20, 18)" width='50' height='50' xlink:href="data:img/png;base64,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"/>
+              </svg>              
+        </div>
+    </div>
+
+
+
+    <header class="header">
+      
+    <!-- NOTIBOX -->
+    <!-- [질문] 반응형떄 글자 .... 으로 나오게 -->
+
+
+    <div class="notibox" id="notibox">
+        <div class="notibox_inner bd_container bd_grid">
+            <h2 class="noti_title">&#91;공지&#93;</h2>
+
+                <div class="swiper-container noti_contents">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a class="noti_txt">코로나 19 관련 국가별 출입 제한 사항 안내</a></li>
+                        <li class="swiper-slide"><a class="noti_txt">김포공항 보안검색 강화에 따른 안내</a></li>
+                        <li class="swiper-slide"><a class="noti_txt">진에어 국제선 비정상운항 안내</a></li>
+                        <li class="swiper-slide"><a class="noti_txt">진에어 국내선 비정상운항 안내</a></li>
+                        <li class="swiper-slide"><a class="noti_txt">고객서비스센터 운영 시간 변경 안내 &#91;'21년 1월 1일 부&#93;</a></li>
+                    </ul>
+                    <!-- // swiper-wrapper-->
+                </div>
+                <!-- //noti_contents -->
+
+            <div class="noti_close">
+                <!-- 체크박스 넣기 -->
+                <input class="noti_check" type="checkbox" name="더보지않기" id="">
+                <span>오늘 하루 보지 않기</span>
+                <button id="noti_closebtn" class="noti_closebtn close_btn"><i class='bx bx-x'></i></button>
+            </div>
+            <!-- // noti_close-->
+        </div>
+        <!-- // notibox_inner-->
+    </div>
+    <!-- // notibox-->
+    
+        <div class="header_util">
+            <div class="util_inner bd_container">
+                
+                    <div class="util_l">
+                        <ul>
+                            <li><a href="#" >나비포인트</a></li>
+                            <li><a href="#" class="bar">지니스토어</a></li>
+                        </ul>
+                    </div>
+                    <!-- //utill_l -->
+
+                    <div class="util_r">
+                        <ul>
+                            <li><a href="">로그인</a></li>
+                            <li><a href="">고객서비스</a></li>
+                            <li><a href="">회원가입</a></li>
+                            <li class="ut_lang">
+                                
+                                <a href="" class="ut_land">
+                                   <i class='ut_land_i bx bx-world'></i>대한민국
+                                </a>
+                                <!-- land -->
+        
+                                <span class="ut_langue bar" id="langue">
+                                    <a class="fw_bold">한국어</a>
+                                    <span>&#47;</span>
+                                    <a >English</a>
+                                </span>
+                                <!-- langue -->
+                            </li>
+                            <!-- lang -->
+                        </ul>
+
+                    </div>
+                    <!-- //util_r -->
+            </div>
+            <!-- // util_inner-->
+        </div>
+        <!-- // header_util-->
+
+        <nav class="header_nav">
+            <div class="header_inner bd_container">
+
+                <a href="#"><img class="logo" src="./img/logo.png" alt="logo"></a>
+
+                <ul class="nav_menu" id="nav_menu">
+                    
+                    <li class="nav_list">
+                        <a href="" class="nav_item">예약</a>
+                        <!-- ======== 서브 메뉴 들어갈 것임 ======== -->
+                        <!-- <ul class="sub_menu">
+                            <li><a href=""></a></li>
+                        </ul> -->
+                    </li>
+                    <li class="nav_list"><a href="" class="nav_item">준비</a></li>
+                    <li class="nav_list"><a href="" class="nav_item">비행</a></li>
+                    <li class="nav_list"><a href="" class="nav_item">멤버쉽&#47;제휴</a></li>
+                    
+                    <!-- // 모바일버전 닫기버튼 -->
+                    <button id="menu_closebtn" class="menu_closebtn close_btn"><i class='bx bx-x'></i></button> 
+                </ul>
+                <!-- // nav_menu-->
+
+                 <!-- hamburger_btn -->
+                 <button id="menu_btn" class="menu_btn">
+                     <i class='bx bx-menu-alt-right' ></i>
+                </button>
+
+                <div class="nav_right">
+
+                    <div class="nav_user">
+                        <i class='bx bx-user' ></i>
+                    </div>
+                    <!-- //nav_user -->
+
+                    <div class="nav_search">
+                        <i class='bx bx-search' ></i>
+                    </div>
+                    <!-- //nav_search -->
+
+                </div>
+                <!-- //nav_right -->
+
+               
+            </div>
+            <!-- //header_inner -->
+            
+        </nav>
+        <!-- // header_nav-->
+    </header>
+
+    <main>
+        <section class="main_banner">
+            <div class="banner_inner bd_container">
+                <!-- <h1>배너</h1> -->
+                <div class="swiper-container banner_box">
+
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="./img/bann1.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann2.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann3.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann4.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann5.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann6.png" alt="banner"></li>
+                        <li class="swiper-slide"><img src="./img/bann7.png" alt="banner"></li>
+                    </ul>
+                    <!-- // swiper-wrapper-->
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <!-- //swiper-container -->
+                
+   
+
+            </div>
+        </section>
+        <!-- //main banner -->
+
+        <section class="main_fn">
+            <div class="fn_inner bd_container">
+                <!-- <h1>자주사용하는 기능</h1> -->
+
+                <div class="re_fn_container">
+                    
+                    <div class="reserve_box bd_grid">
+
+                        <div class="re_box_top">
+                            <ul id="reserve_way_container">
+                                <li class="reserve_way reserve_active">왕복</li>
+                                <li class="reserve_way">편도</li>
+                                <li class="reserve_way">다구간</li>
+                            </ul>
+                            <!-- // reserve_way_container-->
+
+                            <div class="bonus_ticket">
+                                <img class="bonus_i" src="./img/bonus.png" alt="bunusticket icon">
+                                <a href="">보너스항공권예매</a>
+                            </div>
+                            <!-- // bonus_ticket-->
+
+                        </div>
+                        <!-- //re_box_top -->
+                       
+
+                        <div class="re_box_bottom">
+                            <form action="" class="reserve_form">
+
+                                <div class="re_input_field">
+                                    <input class="reserve_input" type="text" placeholder="출발지" />
+                                    <i class='bx bxs-plane-take-off'></i>
+                                </div>
+    
+                                <div class="re_input_field">
+                                    <input class="reserve_input" type="text" placeholder="도착지" />
+                                    <i class='bx bxs-plane-land'></i>
+                                </div>
+    
+                                <div class="re_input_field">
+                                    <input class="reserve_input" type="text" placeholder="가는날" />
+                                    <i class='bx bx-calendar' ></i>
+                                </div>
+    
+                                <div class="re_input_field">
+                                    <input class="reserve_input" type="text" placeholder="오는날" />
+                                    <i class='bx bx-calendar' ></i>
+                                </div>
+    
+                                <div class="re_input_field">
+                                    <input class="reserve_input" type="text" placeholder="탑승객" />
+                                    <i class='bx bxs-user'></i>
+                                </div>
+                               
+                            </form>
+                            <!-- // reserve_form-->
+
+                
+                            
+                            <!-- //조회버튼 -->
+                            <a href="" class="button btn_green"><i class='bx bxs-plane'></i></a>
+                            
+
+                        </div>
+                        <!-- //re_box_bottom -->
+
+                        
+                    </div>
+                    <!-- //reserve_box -->
+
+
+                </div>
+                <!--// re_fn_container -->
+
+
+                <ul class="q_fn_container">
+                        <li class="q_fn_li">               
+                            <a href=""><img src="./img/re1.png" alt="">나의예약</a>
+                        </li>
+
+                        <li class="q_fn_li">               
+                            <a href=""><img src="./img/re2.png" alt="">체크인</a>
+                        </li>
+
+                        <li class="q_fn_li">               
+                            <a href=""><img src="./img/re3.png" alt="">항공편 현황</a>
+                        </li>
+                  
+                </ul>
+                <!-- // q_fn  빠른메뉴-->
+
+            </div>
+            <!-- //fn_inner bd_container -->
+
+        </section>
+        <!-- //main_fn -->
+        
+        <section class="main_low_price">
+            <div class="bd_container section">
+
+                <div class="title_box">
+                    <h2 class="section_title">최저가를 한눈에</h2>
+                    <a href="#" role="more"><i class='more_i bx bx-chevron-right'></i></a>
+                </div>
+                <!-- //title box -->
+
+                <div class="low_price_container bd_grid">
+
+                    <div class="lp_cont">
+                        <span class="lp_label">출발임박</span>
+                        <strong class="lp_place">
+                            서울&#47;김포&lpar;GMP&rpar; -
+                            <br>
+                            제주&lpar;CJU&rpar;
+                        </strong>
+                        <P class="lp_price">
+                            <span>편도총액</span> <br>
+                            <strong>KRW 11,900 -</strong>         
+                        </P>
+
+                        <span class="lp_date">
+                            2021-07-09&lpar;일&rpar; 
+                            <br>
+                            -2021-07-25&lpar;일&rpar; 
+                        </span>
+                    </div>
+                    <!-- //lp_cont -->
+
+                    <div class="lp_cont">
+                        <span class="lp_label">출발임박</span>
+                        <strong class="lp_place">
+                            서울&#47;김포&lpar;GMP&rpar; -
+                            <br>
+                            제주&lpar;CJU&rpar;
+                        </strong>
+                        <P class="lp_price">
+                            <span>편도총액</span> <br>
+                            <strong>KRW 11,900 -</strong>         
+                        </P>
+
+                        <span class="lp_date">
+                            2021-07-09&lpar;일&rpar; 
+                            <br>
+                            -2021-07-25&lpar;일&rpar; 
+                        </span>
+                    </div>
+                    <!-- //lp_cont -->
+
+                    <div class="lp_cont">
+                        <span class="lp_label">출발임박</span>
+                        <strong class="lp_place">
+                            서울&#47;김포&lpar;GMP&rpar; -
+                            <br>
+                            제주&lpar;CJU&rpar;
+                        </strong>
+                        <P class="lp_price">
+                            <span>편도총액</span> <br>
+                            <strong>KRW 11,900 -</strong>         
+                        </P>
+
+                        <span class="lp_date">
+                            2021-07-09&lpar;일&rpar; 
+                            <br>
+                            -2021-07-25&lpar;일&rpar; 
+                        </span>
+                    </div>
+                    <!-- //lp_cont -->
+
+                    <div class="lp_cont">
+                        <span class="lp_label">출발임박</span>
+                        <strong class="lp_place">
+                            서울&#47;김포&lpar;GMP&rpar; -
+                            <br>
+                            제주&lpar;CJU&rpar;
+                        </strong>
+                        <P class="lp_price">
+                            <span>편도총액</span> <br>
+                            <strong>KRW 11,900 -</strong>         
+                        </P>
+
+                        <span class="lp_date">
+                            2021-07-09&lpar;일&rpar; 
+                            <br>
+                            -2021-07-25&lpar;일&rpar; 
+                        </span>
+                    </div>
+                    <!-- //lp_cont -->
+                    
+                    <div class="lp_cont">
+                        <span class="lp_label">출발임박</span>
+                        <strong class="lp_place">
+                            서울&#47;김포&lpar;GMP&rpar; -
+                            <br>
+                            제주&lpar;CJU&rpar;
+                        </strong>
+                        <P class="lp_price">
+                            <span>편도총액</span> <br>
+                            <strong>KRW 11,900 -</strong>         
+                        </P>
+
+                        <span class="lp_date">
+                            2021-07-09&lpar;일&rpar; 
+                            <br>
+                            -2021-07-25&lpar;일&rpar; 
+                        </span>
+                    </div>
+                    <!-- //lp_cont -->
+                    
+                </div>
+                <!-- //lowprice_box -->
+                
+                <div class="best_price_container">
+                    <div class="best_price_box">
+                        <div class="bp_info">
+                            <h3 class="bp_title"> 맞춤 항공권<i class='bx bxs-plane'></i></h3>
+                            <p class="bp_txt">내가 가진 예산으로 갈 수 있는 여행지가 궁금하다면&#63;</p>
+                        </div>
+                        <!-- //bp_info -->
+
+                        <a href="" class="button btn_pur"><i class='bx bx-chevron-right'></i></a>
+                        <!-- 조회 button -->
+                    </div>
+                    <!-- // best_price_box-->
+                </div>
+                <!-- //best_price_container -->
+            </div>
+            <!-- //bd_container-->
+        </section>
+        <!-- //main_lowprice -->
+
+        <section class="main_event">
+            <div class="bd_container section">
+                <div class="title_box">
+                    <h2 class="section_title">진에어만의 이벤트</h2>
+                    <a href="#" role="more"><i class='more_i bx bx-chevron-right'></i></a>
+                </div>
+                 <!-- //title box -->
+
+                 <div class="event_box bd_grid">
+
+                    <a class="event_card ev_bg_blue1">
+                        <img src="./img/evt1.png" alt="이벤트1 오키나와">
+                            <div class="img_desc">
+                                <p class="img_info_title">
+                                    안녕&#44; 오키나와&#33;<br>
+                                    <span class="yell">오키나와의 여름이 궁금하다면&#63;</span>
+                                </p>
+                            </div>
+                    </a>
+                    <!-- //img_card -->
+
+                    
+                    <a class="event_card ev_bg_blue3">
+                        <img src="./img/evt2.png" alt="이벤트1 오키나와">
+                            <div class="img_desc">
+                                <p class="img_info_title">
+                                    진에어 전 회원 벤차량 15&#37; 할인<br>
+                                    <span class="">국가 지정 코로나 방역차량</span>
+                                </p>
+                            </div>
+                        </a>
+                        <!-- //img_card -->
+                        
+                        
+                        <a class="event_card ev_bg_blue2">
+                            <img src="./img/evt3.png" alt="이벤트1 오키나와">
+                            <div class="img_desc">
+                                <p class="img_info_title">
+                                    무료 수하물	&#43;무료기내식<br>
+                                    <span class="yell">기본도&#44;기분도 좋게 떠나요&#33;</span>
+                                </p>
+                            </div>
+                    </a>
+                    <!-- //img_card -->
+
+
+                 </div>
+                 <!-- //event_box -->
+                
+            </div>
+            <!-- //bd_container-->
+        </section>
+        <!-- //main_event -->
+
+        <section class="main_service">
+            <div class="service_inner section bd_container">
+              
+                    <ul class="service_box bd_grid">
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service1.png" alt="액티비티">
+                                <h3 class="service_name">액티비티</h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service2.png" alt="액티비티">
+                                <h3 class="service_name">호텔</h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service3.png" alt="액티비티">
+                                <h3 class="service_name">렌터카</h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service4.png" alt="액티비티">
+                                <h3 class="service_name">기내 면세점</h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service5.png" alt="액티비티">
+                                <h3 class="service_name">안심 서비스</h3>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="service_item" href="">
+                                <img src="./img/service6.png" alt="액티비티">
+                                <h3 class="service_name">카드 및 환전혜택</h3>
+                            </a>
+                        </li>
+
+
+              
+                    </ul>
+                
+            </div>
+        </section>
+        <!-- main_service -->
+    </main>
+
+    <footer>
+        <div class="footer_top">
+            <div class="section bd_container ">
+                <div class="footer_inner bd_grid">
+                    <ul class="footer_menu">
+                        <li class="footer_list">
+                            <a class="ft_menu_title" href="">회사안내</a>
+                            <ul class="ft_sub">
+                                <li><a href="">CEO 인사말</a></li>
+                                <li><a href="">기업 개요</a></li>
+                                <li><a href="">기업 지배구조</a></li>
+                                <li><a href="">윤리 경영</a></li>
+                                <li><a href="">CI 소개</a></li>
+                                <li><a href="">항공기 소개</a></li>
+                            </ul>
+                            <!-- //ft_sub -->
+                        </li>
+                        <!-- //footer_list -->
+    
+                        <li class="footer_list">
+                            <a class="ft_menu_title" href="">약관 및 규정</a>
+                            <ul class="ft_sub">
+                                <li><a class="bold" href="">개인정보 처리방침</a></li>
+                                <li><a href="">홈페이지 이용약관</a></li>
+                                <li><a href="">여객운송약관 및 고지사항</a></li>
+                                <li><a href="">이용자 서비스 계획</a></li>
+                                <li><a href="">피해구제계획</a></li>
+                                <li><a href="">E-티켓 확인증 법적 고지문</a></li>
+                                <li><a href="">사이트 맵</a></li>
+                            </ul>
+                            <!-- //ft_sub -->
+
+                        </li>
+                        <!-- //footer_list -->
+
+    
+                        <li class="footer_list">
+                            <a class="ft_menu_title" href="">회사안내</a>
+                            <ul class="ft_sub">
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">자주 묻는 질문 O&#38;A</a></li>
+                                <li><a href="">고객의 말씀 O&#38;A</a></li>
+                                <li><a href="">기내 유실물 찾기</a></li>
+                            </ul>
+                            <!-- //ft_sub -->
+
+                        </li>
+                        <!-- //footer_list -->
+
+    
+                        <li class="footer_list">
+                            <a class="ft_menu_title" href="">기타정보</a>
+                            <ul class="ft_sub">
+                                <li><a href="">채용정보</a></li>
+                                <li><a href="">투자정보</a></li>
+                                <li><a href="">화물운송</a></li>
+                                <li><a href="">홍보센터</a></li>
+                            </ul>
+                            <!-- //ft_sub -->
+
+                        </li>
+                        <!-- //footer_list -->
+
+                    </ul>
+                    <!-- //footer_menu -->
+    
+                    <div class="footer_social">
+                        <ul class="ft_social_i_box">
+
+                            <li><a class="ft_social_i" href=""><i class='bx bxl-facebook'></i></a></li>
+                            <li><a class="ft_social_i" href=""><i class='bx bxl-twitter'></i></a></li>
+                            <li><a class="ft_social_i" href=""><i class='bx bxl-instagram'></i></a></li>
+                            <li><a class="ft_social_i" href=""><i class='bx bxl-youtube' ></i></a></li>
+                            <li><a class="ft_social_i" href="">
+                                <svg class="social_blog_i" xmlns="http://www.w3.org/2000/svg" transform="translate(0, 0)" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="14" viewBox="0 0 30 14">
+                                    <image id="blog"  width="30" height="14" alignment-baseline="middle" transform="translate(0, 0)" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAOCAYAAAA45qw5AAADX0lEQVQ4jb1TTWgTQRSe2W7dTXfT/Jpssm2atNUGNUk1pmqRIv6AYEFRFPGqHsSDNxHBPzyIZxFBQfAk6EUU9CgKxmoIaW2t2tr8bJqkTWttk+y2+duRSbMxqPQg1XeY9+b9fW/eewOvXrxwpSzLRhVNPX43GHoNfiFXl/OBjBCtUTef9gcDmV/tf0vkWCR8SVyUGjat7zICAH4D/p7J7J1MJa0Wk3lPr9dn8wcD0moAEyRJyliAEC7+yUHNMCHMU+lpQ04Ub67aixVBRohxdTnv5yRph4qmR7TNmpO4tZ++jvdbTKbZVDptECWprz64e8Oma6Ik7pcRolQUNcwy7PmBUDCl2Ld1b/EtZDM3iqWSUc2wzwgCfisWi93UGuplDXgsPHGsWCopVydv5vp6vT4Hbi2jaooBAAwykhuxcftmr3kylRwcHB3h6urwaJs1R3s8m3e9HwoN+Nzdh4c+fXy8lM8Til1xbLe1eRUlbjVa72h/a29pncD3xPSUSZSka1Wz4ofwsZDN3JucSnEEQeAkw+vsjkBDQwOYzyxQUzPph2B5NLcxaCNJgnV2x7t2W9sohHA5GUHUqgGdbY6nY5Fwb3Qy3smbuRmsEyVxd31rlcBsLufDvIWzxMJCzD0ejfR02NreYt18ZoHv9fqacpKkq77u9Xg0sj0sxDbyZi6p5KoBl+WyTpFL5XLjSosBCaJY2QtZpupi2LriSgQB5ape8xPjpz9R7R74Ep7os1n5CLfW9G16dkYLKhvNPqn2t5INIVThWnXzC8xxu1s4S6rVysfDQsyFdQad/rM/GCgYtLoP+D4Ri3psVj5mMZln8c+oAaNlXMA2MSUhmbBPzaT1eHZd7R2vQqMj1yuvAED5chVvNcuew7NVwOPJRAuWbVZeMBmM+6oFHDEb137HspBM2Obm5/Vqhl3eXoQg6ezoPIAQ0pAkGcwXCv3FYsGrolWP3g+FnivVGXX643qtzk5AKISFGPAHA0sAAPdWt+doPp/vxx2lKfpJ4MPgMyGZqMQMhIJY0HtdnlMIyRqaom9F40IiK+aMEMIyPHiof6VxrgptdXlOZMXcmfFoZKcsy8Dt3HCn9o//JUUT8buzc3MMlnnOMs0yzOX/AmzUGd6wTYxDzbKv1Ax71h8MFH4AAaFsRkjjBjEAAAAASUVORK5CYII="/>
+                                </svg>
+                              </a>
+                            </li>
+                        </ul>
+                        <!-- //ft_social_i_box -->
+
+
+                        <div class="ft_download_i_box">
+                            <a href=""><img src="./img/footer_i_d1.png" alt="google download"></a>
+                            <a href=""><img src="./img/footer_i_d.png" alt="apple download"></a>
+                            
+                        </div>
+                        <!-- ft_download_i_box -->
+                    </div>
+                    <!-- //footer_social -->
+    
+                </div>
+                <!-- //footer_inner -->
+
+            </div>
+            <!-- // section bd_container-->
+        </div>
+        <!-- // footer_top-->
+
+        <div class="footer_bottom">
+            <div class="section bd_container">
+                <div class="footer_inner bd_grid">
+                    <div class="footer_info">
+                        <div class="fb_info_ltop">
+                            <p class="section_title c_info_bar"><span>서비스 센터 1600 6200</span> 02 6099 1200</p>
+                            <p class="bar"> 업무시간 08:00 - 20:00</p>
+                            
+                        </div>
+                        <!-- // fb_info_ltop-->
+
+                        <div class="fb_info_lbottom">
+                            <div class="fb_com_info_box">
+                                <p class="footer_logo">㈜진에어</p>
+                                <div class="fb_com_info">
+                                    <p class="">대표이사 최정호</p>
+                                    <p class="bar">사업자등록번호 121-81-89086</p>
+                                    <P class="bar">통신판매업 신고번호 : 제2008-서울 강서-0408</P>
+                                    <address class="">주소 : 서울시 강서구 공항대로 453</address>
+                                    <P class="bar">개인정보보호책임자 : 이광</P>
+                                </div>
+                            </div>
+                            <p class="copyright">Copyright © JIN AIR. All Rights Reserved.</p>
+                        </div>
+                        <!-- // fb_info_ltop-->
+                    </div>
+                    <!-- //footer_info -->
+
+
+                    <div class="footer_reward">
+                        <img src="./img/footer3.png" alt="reward">
+                    </div>
+                    <!-- //footer_reward -->
+
+                </div>
+                <!-- //footer_inner -->
+            </div>
+        </div>
+        <!-- // footer_bottom-->
+    </footer>
+
+
+    <!-- swiper slider -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- main.js -->
+    <script src="/js/main.js"></script>
+
+ <!-- ========================= SWIPER SLIDER ============================= -->
+    <script>
+// ============= NOTI SLIDER ==============
+
+var swiper = new Swiper(".noti_contents", {
+    direction: "vertical",
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+  });
+
+
+
+// ============ BANNER SLIDER ==================
+
+var swiper = new Swiper(".banner_box", {
+
+    loop: true,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+
+  });
+
+
+
+    </script>
+
+</body>
+</html>
