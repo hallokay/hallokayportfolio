@@ -8,6 +8,25 @@ if(notiBox && notiClose) {
     })
 }
 
+// === 공지 슬라이드
+const slideContainer = document.querySelector('.slide_container'),
+        slideWrap = document.querySelector('.slide_wrap'),
+        slides = document.querySelectorAll('.slide');
+
+let currentIndex = 0;
+let slideCount = slides.length;
+
+function notislide () {
+    let nextIndex = (currentIndex + 1) % slideCount;
+
+    slides[currentIndex].style.opacity = '0';
+    slides[nextIndex].style.opacity = '1';
+
+    currentIndex = nextIndex;
+};
+
+
+setInterval (notislide, 3000);
 
 
 

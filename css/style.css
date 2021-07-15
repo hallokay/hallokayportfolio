@@ -185,7 +185,7 @@ body {
 .chatbot_box {
   position: fixed;
   bottom: 85px;
-  right: 1%;
+  left: calc( 50% + 650px);
 }
 
 /* [질문!!!!!!!!!!!!]챗봇 고정시키기 그리드 라인1200px 바깥에 고정하는법
@@ -258,16 +258,64 @@ header {
 .noti_title,
 .noti_contents {
   color: var(--point-color);
+  white-space: nowrap;
 }
 
 .noti_contents {
   font-weight: bold;
 }
 
-.noti_txt {
-  margin: 1.5rem 0;
+.noti_txt,
+.noti_close span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+/* ========== noti slide ============== */
+.slide_container {
+  width: 100%;
+  /* background: #000; */
+}
+
+.slide_wrap {
+  position: relative;
+  overflow: hidden;
+  /* width: ; */
+  /* height: ; */
+
+}
+.slide { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all .5s ease-in;
+}
+
+.noti_s_wrap {
+  width: 300px;
+  height: var(--notibox-height);
+}
+
+
+.noti_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--notibox-height);
+  background: var(--bg-gray-dark);
   cursor: pointer;
 }
+
+.noti_slide:nth-child(1) {z-index: 5;}
+.noti_slide:nth-child(2) {z-index: 4;}
+.noti_slide:nth-child(3) {z-index: 3;}
+.noti_slide:nth-child(4) {z-index: 2;}
+.noti_slide:nth-child(5) {z-index: 1;}
+
+
 
 .noti_check {
   /* width: 10px; */
@@ -281,6 +329,10 @@ header {
   color: var(--dark-gray);
   font-size: var(--small-font);
 }
+
+
+
+
 
 /* ========= util ========= */
 .header_util {
@@ -581,25 +633,46 @@ header {
 .q_fn_container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   padding: var(--mb6) 0;
 }
 .q_fn_li a {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: var(--big-font);
+  font-size: var(--normal-font);
 }
 
 .q_fn_li img {
-  width: 40px;
-  padding-right: var(--mb2);
+  width: 30px;
+  margin-bottom: var(--mb2);
 }
 .q_fn_li a:hover {
   color: #fff;
   transform: scale(1.1);
 }
 
+@media (min-width: 768px) {
+  .q_fn_container {
+    align-items: center;
+  }
+
+
+
+  .q_fn_li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .q_fn_li img {
+    width: 40px;
+    margin-right: var(--mb1);
+    margin-bottom: 0;
+
+  }
+}
 /* ======================= MAIN - LOWPRICE ==============================*/
 
 .low_price_container {
@@ -753,9 +826,14 @@ header {
 }
 
 .service_box li {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 150px;
+  height: 150px;
   background: #fff;
   border-radius: 50%;
+  margin: 0 1rem;
   
 }
 
@@ -767,10 +845,14 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: var(--mb3);
   align-items: center;
   transition: all .5 ease-in-out;
   z-index: 1;
-  padding: var(--mb3);
+}
+
+.service_item img {
+  width: 60px;
 }
 
 
@@ -970,7 +1052,7 @@ header {
 
 
 
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .bd_container {
     margin: 0 auto;
   }

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
  
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 
@@ -42,15 +42,15 @@
         <div class="notibox_inner bd_container bd_grid">
             <h2 class="noti_title">&#91;공지&#93;</h2>
 
-                <div class="swiper-container noti_contents">
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide"><a class="noti_txt">코로나 19 관련 국가별 출입 제한 사항 안내</a></li>
-                        <li class="swiper-slide"><a class="noti_txt">김포공항 보안검색 강화에 따른 안내</a></li>
-                        <li class="swiper-slide"><a class="noti_txt">진에어 국제선 비정상운항 안내</a></li>
-                        <li class="swiper-slide"><a class="noti_txt">진에어 국내선 비정상운항 안내</a></li>
-                        <li class="swiper-slide"><a class="noti_txt">고객서비스센터 운영 시간 변경 안내 &#91;'21년 1월 1일 부&#93;</a></li>
+                <div class="slide_container noti_contents">
+                    <ul class="slide_wrap noti_s_wrap">
+                        <li class="slide noti_slide"><a class="noti_txt">코로나 19 관련 국가별 출입 제한 사항 안내</a></li>
+                        <li class="slide noti_slide"><a class="noti_txt">김포공항 보안검색 강화에 따른 안내</a></li>
+                        <li class="slide noti_slide"><a class="noti_txt">진에어 국제선 비정상운항 안내</a></li>
+                        <li class="slide noti_slide"><a class="noti_txt">진에어 국내선 비정상운항 안내</a></li>
+                        <li class="slide noti_slide"><a class="noti_txt">고객서비스센터 운영 시간 변경 안내 &#91;'21년 1월 1일 부&#93;</a></li>
                     </ul>
-                    <!-- // swiper-wrapper-->
+                    <!-- //slide_inner-->
                 </div>
                 <!-- //noti_contents -->
 
@@ -486,36 +486,36 @@
 
                         <li>
                             <a class="service_item" href="">
-                                <img src="./img/service2.png" alt="액티비티">
+                                <img src="./img/service2.png" alt="호텔">
                                 <h3 class="service_name">호텔</h3>
                             </a>
                         </li>
 
                         <li>
                             <a class="service_item" href="">
-                                <img src="./img/service3.png" alt="액티비티">
+                                <img src="./img/service3.png" alt="렌터카">
                                 <h3 class="service_name">렌터카</h3>
                             </a>
                         </li>
 
                         <li>
                             <a class="service_item" href="">
-                                <img src="./img/service4.png" alt="액티비티">
+                                <img src="./img/service4.png" alt="기내면세점">
                                 <h3 class="service_name">기내 면세점</h3>
                             </a>
                         </li>
 
                         <li>
                             <a class="service_item" href="">
-                                <img src="./img/service5.png" alt="액티비티">
+                                <img src="./img/service5.png" alt="안심서비스">
                                 <h3 class="service_name">안심 서비스</h3>
                             </a>
                         </li>
 
                         <li>
                             <a class="service_item" href="">
-                                <img src="./img/service6.png" alt="액티비티">
-                                <h3 class="service_name">카드 및 환전혜택</h3>
+                                <img src="./img/service6.png" alt="카드및환전혜택">
+                                <h3 class="service_name">카드/환전혜택</h3>
                             </a>
                         </li>
 
@@ -529,7 +529,7 @@
     </main>
 
     <footer>
-        <div class="footer_top">
+        <section class="footer_top">
             <div class="section bd_container ">
                 <div class="footer_inner bd_grid">
                     <ul class="footer_menu">
@@ -625,10 +625,10 @@
 
             </div>
             <!-- // section bd_container-->
-        </div>
+        </section>
         <!-- // footer_top-->
 
-        <div class="footer_bottom">
+        <section class="footer_bottom">
             <div class="section bd_container">
                 <div class="footer_inner bd_grid">
                     <div class="footer_info">
@@ -650,7 +650,7 @@
                                     <P class="bar">개인정보보호책임자 : 이광</P>
                                 </div>
                             </div>
-                            <p class="copyright">Copyright © JIN AIR. All Rights Reserved.</p>
+                            <small class="copyright">Copyright © JIN AIR. All Rights Reserved.</sma>
                         </div>
                         <!-- // fb_info_ltop-->
                     </div>
@@ -674,19 +674,19 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- main.js -->
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
 
  <!-- ========================= SWIPER SLIDER ============================= -->
     <script>
 // ============= NOTI SLIDER ==============
 
-var swiper = new Swiper(".noti_contents", {
-    direction: "vertical",
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-  });
+// var swiper = new Swiper(".noti_contents", {
+//     direction: "vertical",
+//     autoplay: {
+//         delay: 3000,
+//         disableOnInteraction: false,
+//       },
+//   });
 
 
 
